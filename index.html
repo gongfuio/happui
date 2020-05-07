@@ -5,11 +5,34 @@
   <meta charset="utf-8">
   <style>
     body { background: #fafafa; }
-    happ-ui { width: 45%; height: 45%; }
+    happ-ui { width: 50%; height: 50%; }
+    happui-slider { width: 17%; }
   </style>
 </head>
 
 <body>
+  <div id="demo slider">
+    <happ-ui id='wheel0' title="Color Wheel 1"
+             sentir="0.75" comprendre="0.55" connaitre="0.35"></happ-ui>
+    <div>
+      <happui-slider id='slider1' value='0.55'>comprendre</happui-slider>
+      <happui-slider id='slider0' value='0.75'>sentir</happui-slider>
+      <happui-slider id='slider2' value='0.35'>connaitre</happui-slider>
+    </div>
+
+    <p id='para1'>...</p>
+    <script>
+      const para1 = document.getElementById('para1');
+      const slider0 = document.getElementById('slider0');
+      const slider1 = document.getElementById('slider1');
+      const slider2 = document.getElementById('slider2');
+      const wheel0 = document.getElementById('wheel0');
+      slider0.addEventListener('event-slider', (e) => {para1.innerHTML=`slider0 ${e.detail}`; wheel0.setAttribute('sentir', e.detail)});
+      slider1.addEventListener('event-slider', (e) => {para1.innerHTML=`slider1 ${e.detail}`; wheel0.setAttribute('comprendre', e.detail)});
+      slider2.addEventListener('event-slider', (e) => {para1.innerHTML=`slider2 ${e.detail}`; wheel0.setAttribute('connaitre', e.detail)});
+    </script>
+
+  </div>
   <div id="demo">
     <happ-ui title="Color Wheel 1"
              sentir="0.75" connaitre="0.75" comprendre="0.75"></happ-ui>
@@ -19,6 +42,7 @@
 
   <script type="module">
     import './happ-ui.js';
+    import './src/happui-slider.js';
   </script>
 
 </body>
