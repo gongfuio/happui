@@ -14,7 +14,7 @@ requirements and concept (described at https://happui.org/app/).
   sentir="0.8" connaitre="0.5" comprendre="0.6"></happ-ui-exp01>
 ```
 
-![Two sample ‹happ-ui› web components](docs/happ-ui-components-sample.png)
+![Sample ‹happ-ui› web components](docs/20200616_happ-ui_screenshot.png)
 
 ## Our \<happ-ui> Web Component
 

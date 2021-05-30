@@ -4,18 +4,30 @@
 <head>
   <title>index.html</title>
   <meta charset="utf-8">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap" rel="stylesheet">
   <style>
     body {
-      background: #eee;
-      font-family: 'Roboto Condensed', sans-serif;
+      background: #fff;
+      font-family: 'Roboto', sans-serif;
     }
 
     div#master,
     div#detail {
       background: #fff;
-      margin: 0.5em 0.1em;
-      padding: 0.5em 0.5em;
+      margin: 1em 1em;
+      padding: 1em 1em;
+      text-align: center;
+    }
+
+    h1 {
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      margin-bottom: 2em;
+      color: #999;
+    }
+
+    select#selectVariant {
+      margin-bottom: 3em;
     }
 
     happ-ui-exp01,
@@ -25,20 +37,34 @@
     happ-ui-exp04 {
       width: 20%; height: 20%;
     }
+
+    .thelogo {
+      padding: 0 1em 1em 0;
+    }
+
+    div#footer,
+    div#footer a {
+      font-weight: 300;
+      line-height: 1.5em;
+      color: #999;
+      text-align: center;
+      margin: 4em 0 10em 0;
+    }
   </style>
 </head>
 
 <body>
   <div id="master">
-    <happ-ui-exp01 title="Color Wheel Exp 01"
+    <h1>HappUI</h1>
+    <happ-ui-exp01 title="Color Wheel Exp 01" class="thelogo"
       sentir="0.65" connaitre="0.65" comprendre="0.65"></happ-ui-exp01>
-    <happ-ui-exp02 title="Color Wheel Exp 02"
+    <happ-ui-exp02 title="Color Wheel Exp 02" class="thelogo"
       sentir="0.65" connaitre="0.65" comprendre="0.65"></happ-ui-exp02>
-    <happ-ui-exp03a title="Color Wheel Exp 03A"
+    <happ-ui-exp03a title="Color Wheel Exp 03A" class="thelogo"
       sentir="0.65" connaitre="0.65" comprendre="0.65"></happ-ui-exp03a>
-    <happ-ui-exp03b title="Color Wheel Exp 03B"
+    <happ-ui-exp03b title="Color Wheel Exp 03B" class="thelogo"
       sentir="0.65" connaitre="0.65" comprendre="0.65"></happ-ui-exp03b>
-    <happ-ui-exp04 title="Color Wheel Exp 04"
+    <happ-ui-exp04 title="Color Wheel Exp 04" class="thelogo"
       sentir="0.65" connaitre="0.65" comprendre="0.65"></happ-ui-exp04>
 
     <happ-sliders
@@ -83,7 +109,7 @@
 
     import { HappContactSheet } from './src/HappContactSheet.js';
     window.customElements.define('happ-contact-sheet', HappContactSheet);
-    
+
     let happUIElements;
     window.addEventListener( "DOMContentLoaded", function( e) {
       happUIElements = [
@@ -93,7 +119,7 @@
         ...document.querySelectorAll( "happ-ui-exp03b"),
         ...document.querySelectorAll( "happ-ui-exp04")
       ];
-      
+
       const contactSheetElt = document.getElementById( "contactSheet");
       document.getElementById( "selectVariant").addEventListener( "change", (e) => {
         const newVariant = e.target.value;
@@ -112,6 +138,8 @@
       });
     }
   </script>
+
+  <div id="footer">Copyright 2020 Enrique Pardo, Rudi Farkas & Olivier Lange<br />A <a href="http://gongfu.io">gongfu.io</a> and <a href="https://happui.org/info">Happui Labs</a> playground</div>
 
 </body>
 </html>

@@ -18,8 +18,9 @@ export class HappContactSheet extends LitElement {
       happ-ui-exp03b,
       happ-ui-exp04 {
         width: 10%; height: 10%;
+        padding: 0 1em 1em 0
       }
-  
+
       button {
         text-align: center;
       }

@@ -5,7 +5,8 @@ export class HappSliders extends LitElement {
   static get styles() {
     return css`
       :host { display: block; }
-      .sliders { margin: 0 auto; }
+      .sliders { margin-top: 2em; }
+      .theslider { margin-bottom: 1.5em; }
     `;
   }
 
@@ -27,9 +28,9 @@ export class HappSliders extends LitElement {
 
   render() {
     return html`<div class="sliders">
-      <happ-slider label="SEN" value="${this.sentir}" @slider-change="${this.handleChangeSEN}"></happ-slider>
-      <happ-slider label="CON" value="${this.connaitre}" @slider-change="${this.handleChangeCON}"></happ-slider>
-      <happ-slider label="COM" value="${this.comprendre}" @slider-change="${this.handleChangeCOM}"></happ-slider>
+      <happ-slider class="theslider" label="SEN" value="${this.sentir}" @slider-change="${this.handleChangeSEN}"></happ-slider>
+      <happ-slider class="theslider" label="CON" value="${this.connaitre}" @slider-change="${this.handleChangeCON}"></happ-slider>
+      <happ-slider class="theslider" label="COM" value="${this.comprendre}" @slider-change="${this.handleChangeCOM}"></happ-slider>
     </div>`;
   }
 
